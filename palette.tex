@@ -1,0 +1,25 @@
+% pubstyle colors -- \input{palette.tex} after \usepackage{xcolor} (and pgfplots)
+% Usage: \textcolor{pubIndigo}{text}, color=pubClay in TikZ/pgfplots, colormap name=pubseq
+\definecolor{pubIndigo}{HTML}{525A94}
+\definecolor{pubClay}{HTML}{D68A4E}
+\definecolor{pubSage}{HTML}{50B095}
+\definecolor{pubRose}{HTML}{B8566B}
+\definecolor{pubPeriwinkle}{HTML}{848DC8}
+\definecolor{pubOchre}{HTML}{C9A53F}
+\definecolor{pubSky}{HTML}{6DBBE4}
+\definecolor{pubGrey}{HTML}{868686}
+\definecolor{pubInk}{HTML}{2B2B2B}
+% pgfplots cycle list (fixed order) and colormaps
+\ifdefined\pgfplotsset
+\pgfplotscreateplotcyclelist{pubcycle}{%
+  {pubIndigo,mark=*},%
+  {pubClay,mark=*},%
+  {pubSage,mark=*},%
+  {pubRose,mark=*},%
+  {pubPeriwinkle,mark=*},%
+  {pubOchre,mark=*},%
+  {pubSky,mark=*},%
+}
+\pgfplotsset{colormap={pubseq}{rgb255=(244,246,255) rgb255=(209,216,255) rgb255=(179,188,237) rgb255=(151,160,215) rgb255=(125,134,189) rgb255=(101,109,160) rgb255=(78,85,128) rgb255=(58,63,94) rgb255=(40,43,62)}}
+\pgfplotsset{colormap={pubdiv}{rgb255=(57,63,109) rgb255=(94,102,157) rgb255=(137,146,195) rgb255=(186,192,223) rgb255=(240,240,240) rgb255=(217,187,167) rgb255=(185,138,104) rgb255=(145,93,53) rgb255=(99,55,19)}}
+\fi
